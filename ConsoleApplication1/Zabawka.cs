@@ -9,6 +9,7 @@ namespace Aplikacja
 
     class Zabawka
     {
+
         Wartosc wartoscBazowa;
         double wiek;
         String nazwa;
@@ -24,6 +25,17 @@ namespace Aplikacja
             this.glebokosc = glebokosc;
         }
 
+        public delegate void ZwiekszonoWartosc();
+        public event ZwiekszonoWartosc onZwiekszonoWartosc;
+
+        public double WartoscAktualna
+        {
+            get
+            {
+                return WartoscBazowa.WartoscSentymentalna * WartoscBazowa.Cena / this.wiek;
+            }
+        }
+
         public double Szybkosc
         {
             get
@@ -33,6 +45,10 @@ namespace Aplikacja
 
             set
             {
+                if(value > szybkosc)
+                {
+                    onZwiekszonoWartosc?.Invoke();
+                }
                 szybkosc = value;
             }
         }
@@ -46,6 +62,10 @@ namespace Aplikacja
 
             set
             {
+                if (value > wysokosc)
+                {
+                    onZwiekszonoWartosc?.Invoke();
+                }
                 wysokosc = value;
             }
         }
@@ -59,6 +79,10 @@ namespace Aplikacja
 
             set
             {
+                if (value > glebokosc)
+                {
+                    onZwiekszonoWartosc?.Invoke();
+                }
                 glebokosc = value;
             }
         }

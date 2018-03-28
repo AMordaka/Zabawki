@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Aplikacja
 {
-    class PokojZabawek
+    public class PokojZabawek
     {
+        public delegate void OsiagnietoLimit();
+        public delegate void DodanoZabawke();
+        public event DodanoZabawke onDodanoZabawke;
+        public event OsiagnietoLimit onOsiagnietoLimit;
         private List<Zabawka> listaZabawek = new List<Zabawka>();
+        private static int limitZabawek = 2;
+
 
         internal List<Zabawka> ListaZabawek
         {
@@ -23,12 +29,25 @@ namespace Aplikacja
             }
         }
 
-        void dodajZabawke(Zabawka zabawka)
+        internal int LimitZabawek { get => limitZabawek; set => limitZabawek = value; }
+
+        internal void dodajZabawke(Zabawka zabawka)
         {
-            listaZabawek.Add(zabawka);
+            int liczbaZabawek = listaZabawek.Count;
+            if(limitZabawek > liczbaZabawek)
+            {
+                listaZabawek.Add(zabawka);
+                onDodanoZabawke?.Invoke();
+            }
+            else
+            {
+                onOsiagnietoLimit?.Invoke();
+            }
+
+
         }
 
-        void wyswietlPokoj()
+        internal void wyswietlPokoj()
         {
             foreach(Zabawka zabawka in listaZabawek)
             {
@@ -36,7 +55,7 @@ namespace Aplikacja
             }
         }
 
-        void zmienSzybkoscWszystkich(double szybkosc)
+        internal void zmienSzybkoscWszystkich(double szybkosc)
         {
             foreach (Zabawka zabawka in listaZabawek)
             {
@@ -44,7 +63,7 @@ namespace Aplikacja
             }
         }
 
-        void zmienWysokoscWszystkich(double wysokosc)
+        internal void zmienWysokoscWszystkich(double wysokosc)
         {
             foreach (Zabawka zabawka in listaZabawek)
             {
@@ -52,7 +71,7 @@ namespace Aplikacja
             }
         }
 
-        void zmienGlebokoscWszystkich(double glebokosc)
+        internal void zmienGlebokoscWszystkich(double glebokosc)
         {
             foreach (Zabawka zabawka in listaZabawek)
             {
@@ -65,17 +84,7 @@ namespace Aplikacja
             Console.WriteLine(s);
         }
 
-        static void Main(string[] args)
-        {
-            PokojZabawek pokoj = new PokojZabawek();
-            Zabawka samochod = new Zabawka("Samochod", 10, 10, 10);
-            Zabawka samolot = new Zabawka("Samolot", 20, 20, 20);
-            pokoj.dodajZabawke(samochod);
-            pokoj.dodajZabawke(samolot);
-            pokoj.wyswietlPokoj();
-            pokoj.zmienSzybkoscWszystkich(5.2);
-            pokoj.wyswietlPokoj();
-            Console.ReadLine();
-        }
+
+    
     }
 }

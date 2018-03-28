@@ -49,7 +49,7 @@ namespace Aplikacja
             {
                 if (value < 0)
                 {
-                    throw new ValidationException("Wartość sentymentalna nie może być mniejsza niż 0 zl");
+                    throw new ValidationException("Wartość sentymentalna nie może być mniejsza niż 0");
                 }
                 wartoscSentymentalna = value;
             }
