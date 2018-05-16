@@ -12,3 +12,10 @@ C:\Users\Arek\Desktop\Zabawki\ConsoleApplication1\ConsoleApplication1\obj\Debug\
 C:\Users\Arek\Desktop\Zabawki\ConsoleApplication1\ConsoleApplication1\obj\Debug\Aplikacja.csproj.CoreCompileInputs.cache
 C:\Users\Arek\Desktop\Zabawki\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\Arek\Desktop\Zabawki\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Arek\Desktop\Projekty\Zabawki\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Arek\Desktop\Projekty\Zabawki\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Arek\Desktop\Projekty\Zabawki\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Arek\Desktop\Projekty\Zabawki\ConsoleApplication1\ConsoleApplication1\obj\Debug\Aplikacja.csprojResolveAssemblyReference.cache
+C:\Users\Arek\Desktop\Projekty\Zabawki\ConsoleApplication1\ConsoleApplication1\obj\Debug\Aplikacja.csproj.CoreCompileInputs.cache
+C:\Users\Arek\Desktop\Projekty\Zabawki\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Arek\Desktop\Projekty\Zabawki\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

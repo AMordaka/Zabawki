@@ -43,12 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InterfaceGlebokosc.cs" />
+    <Compile Include="InterfaceSzybkosc.cs" />
+    <Compile Include="InterfaceWysokosc.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="TestWatki.cs" />
     <Compile Include="Wartosc.cs" />
     <Compile Include="PokojZabawek.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValidationException.cs" />
     <Compile Include="Zabawka.cs" />
+    <Compile Include="ZabawkaSamochod.cs" />
+    <Compile Include="ZabawkaSamolot.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

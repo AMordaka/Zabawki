@@ -47,11 +47,33 @@ namespace Aplikacja
 
         }
 
+        internal void usunZabawke(Zabawka zabawka)
+        {
+            listaZabawek.Remove(zabawka);
+        }
+
         internal void wyswietlPokoj()
         {
             foreach(Zabawka zabawka in listaZabawek)
             {
-                Console.WriteLine(zabawka.Nazwa + " " + zabawka.Szybkosc + " " + zabawka.Wysokosc + " " + zabawka.Glebokosc);
+                if (zabawka is InterfaceSzybkosc)
+                {
+                    InterfaceSzybkosc temp = (InterfaceSzybkosc)(zabawka);
+                    Console.WriteLine(zabawka.Nazwa + " " + temp.Szybkosc);
+                }
+
+                if (zabawka is InterfaceGlebokosc)
+                {
+                    InterfaceGlebokosc temp = (InterfaceGlebokosc)(zabawka);
+                    Console.WriteLine(zabawka.Nazwa + " " + temp.Glebokosc);
+                }
+
+                if (zabawka is InterfaceWysokosc)
+                {
+                    InterfaceWysokosc temp = (InterfaceWysokosc)(zabawka);
+                    Console.WriteLine(zabawka.Nazwa + " " + temp.Wysokosc);
+                }
+
             }
         }
 
@@ -59,7 +81,12 @@ namespace Aplikacja
         {
             foreach (Zabawka zabawka in listaZabawek)
             {
-                zabawka.Szybkosc += szybkosc;
+                if(zabawka is InterfaceSzybkosc)
+                {
+                    InterfaceSzybkosc temp = (InterfaceSzybkosc)(zabawka);
+                    temp.Szybkosc = szybkosc;
+                }
+                
             }
         }
 
@@ -67,7 +94,11 @@ namespace Aplikacja
         {
             foreach (Zabawka zabawka in listaZabawek)
             {
-                zabawka.Wysokosc += wysokosc;
+                if (zabawka is InterfaceWysokosc)
+                {
+                    InterfaceWysokosc temp = (InterfaceWysokosc)(zabawka);
+                    temp.Wysokosc = wysokosc;
+                }
             }
         }
 
@@ -75,7 +106,11 @@ namespace Aplikacja
         {
             foreach (Zabawka zabawka in listaZabawek)
             {
-                zabawka.Glebokosc += glebokosc;
+                if (zabawka is InterfaceGlebokosc)
+                {
+                    InterfaceGlebokosc temp = (InterfaceGlebokosc)(zabawka);
+                    temp.Glebokosc = glebokosc;
+                }
             }
         }
 
